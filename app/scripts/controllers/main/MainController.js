@@ -37,7 +37,8 @@
             scope.updateDf = function(dateFormat){
                 localStorageService.addToLocalStorage('dateformat', dateFormat);
                 scope.dateformat = dateFormat;
-            }
+                scope.setDf();
+            };
             scope.setDf();
             $rootScope.setPermissions = function (permissions) {
                 $rootScope.permissionList = permissions;
@@ -120,8 +121,9 @@
             scope.search = function () {
                 location.path('/search/' + scope.search.query);
             };
-            scope.text = '<span>We imagine a world where all people, no matter how remote, are connected through mobile technology; enabling them to create opportunity for themselves, as well as their families and community.  We believe providing secure, simple, and affordable access to capital will achieve this.
-            </span>';
+            scope.text = '<span>Mifos X is designed by the <a href="http://www.openmf.org/">Mifos Initiative</a>.' +
+            '<a href="http://mifos.org/resources/community/"> A global community </a> thats aims to speed the elimination of poverty by enabling Organizations to more effectively and efficiently deliver responsible financial services to the world’s poor and unbanked </span><br/>' +
+            '<span>Sounds interesting?<a href="http://mifos.org/take-action/volunteer/"> Get involved!</a></span>';
 
             scope.logout = function () {
                 scope.currentSession = sessionManager.clear();
